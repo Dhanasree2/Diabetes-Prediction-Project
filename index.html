@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Tool</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #83a4d4, #b6fbff);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <h1>Diabetes Prediction Tool</h1>
+        <h2 style="color: #333;">Diabetes Awareness</h2>
+    <img src="{{ url_for('static', filename='diabetes1.jpg') }}" width="500" style="border-radius: 15px; margin: 10px;">
+    <img src="{{ url_for('static', filename='diabetes2.jpg') }}" width="500" style="border-radius: 15px; margin: 10px;">
+    
+        
+        
+        <form action="/predict" method="post">
+            <input type="text" name="Pregnancies" placeholder="Number of Pregnancies" required><br>
+            <input type="text" name="Glucose" placeholder="Glucose Level" required><br>
+            <input type="text" name="BloodPressure" placeholder="Blood Pressure" required><br>
+            <input type="text" name="SkinThickness" placeholder="Skin Thickness" required><br>
+            <input type="text" name="Insulin" placeholder="Insulin Level" required><br>
+            <input type="text" name="BMI" placeholder="BMI" required><br>
+            <input type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" required><br>
+            <input type="text" name="Age" placeholder="Age" required><br>
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
