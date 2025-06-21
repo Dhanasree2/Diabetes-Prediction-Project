@@ -1,4 +1,7 @@
 # Diabetes Prediction Project
+![Python](https://img.shields.io/badge/Python-3.8-blue)
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 This project is a Machine Learning model that predicts whether a person is likely to have diabetes or not based on certain medical parameters.
 
@@ -45,6 +48,11 @@ Diabetes-Prediction-Project
 git clone https://github.com/Dhanasree2/Diabetes-Prediction-Project.git
 
 2. Install required libraries:
+flask
+numpy
+pandas
+scikit-learn
+
 pip install -r requirements.txt
 
 3.Run the Flask app:
@@ -64,6 +72,13 @@ GitHub: Dhanasree2
 Thanks to Kaggle for the dataset.
 Special thanks to the mentors and guides who supported this project.
 
+## 📸 Screenshots
 
+### Home Page
+![Home Page](Screenshot 2025-06-12 143721.png)
+
+### Prediction Result
+![Prediction Result](screenshot 2025-06-12 143813.png)
+(screenshot 2025-06-12 143833.png)
 
 
